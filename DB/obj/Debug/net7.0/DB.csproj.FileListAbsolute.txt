@@ -1,0 +1,14 @@
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\bin\Debug\net7.0\DB.deps.json
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\bin\Debug\net7.0\DB.runtimeconfig.json
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\bin\Debug\net7.0\DB.dll
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\bin\Debug\net7.0\DB.pdb
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.csproj.AssemblyReference.cache
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.AssemblyInfoInputs.cache
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.AssemblyInfo.cs
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.csproj.CoreCompileInputs.cache
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.dll
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\refint\DB.dll
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.pdb
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\DB.genruntimeconfig.cache
+C:\Users\mkc\Proyectos\jeremie-garcia-test\DB\obj\Debug\net7.0\ref\DB.dll

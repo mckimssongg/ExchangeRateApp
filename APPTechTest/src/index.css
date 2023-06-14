@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  a {
+    text-decoration: none !important;
+  }
+}
+html {
+  height: 100vh;
+}
+#root {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+
+.btn-hover {
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+}
