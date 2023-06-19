@@ -26,7 +26,18 @@ const Navbar = () => {
       </div>
     );
   }
-
+  const getGreeting = () => {
+    const timeOfDay = new Date().getHours();
+  
+    if (timeOfDay >= 6 && timeOfDay < 12) {
+      return "☀️ Good morning";
+    } else if (timeOfDay >= 12 && timeOfDay < 18) {
+      return "🍂 Good afternoon";
+    } else {
+      return "🌙 Good evening";
+    }
+  };
+  
   return (
     <div className="d-flex flex-column vh-100 ">
       <header
@@ -58,6 +69,7 @@ const Navbar = () => {
             🐈
           </Link>
         </h1>
+        {getGreeting()}
       </header>
 
       <div className="container-fluid px-0 flex-grow-1">

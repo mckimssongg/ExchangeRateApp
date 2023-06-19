@@ -8,24 +8,46 @@ export const TransactionPage = () => {
   const [transactions, setTransactions] = useState([]);
   const [countTransactions, setCountTransactions] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [viewCurrent, setViewCurrent] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const LoadViewTransactions = () => {
     // Obtener las transacciones desde la API
+    setViewCurrent(!viewCurrent);
+    if (viewCurrent) {
+      API.get("/Transaction/current")
+        .then((response) => {
+          if (response.status) {
+            setTransactions(response.value);
+            setCountTransactions(response.value.length);
+          }
+        })
+        .catch((error) => {
+          setError(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      API.get("/Transaction")
+        .then((response) => {
+          if (response.status) {
+            setTransactions(response.value);
+            setCountTransactions(response.value.length);
+          }
+        })
+        .catch((error) => {
+          setError(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  };
+
+  useEffect(() => {
     setLoading(true);
-    API.get("/Transaction")
-      .then((response) => {
-        if (response.status) {
-          setTransactions(response.value);
-          setCountTransactions(response.value.length);
-        }
-      })
-      .catch((error) => {
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    LoadViewTransactions();
   }, []);
 
   return (
@@ -35,6 +57,13 @@ export const TransactionPage = () => {
         <h3 className="m-0 align-text-bottom pt-2">
           Transaction Count: {countTransactions}
         </h3>
+        <button
+          className="btn btn-primary btn-sm"
+          style={{ width: "116px" }}
+          onClick={LoadViewTransactions}
+        >
+          {viewCurrent ? "See All" : "View Current"}
+        </button>
       </div>
       {!error ? (
         !loading ? (
@@ -47,8 +76,8 @@ export const TransactionPage = () => {
           </div>
         )
       ) : (
-        <div className="text-center mt-3">
-          <h2>There was an error loading the transactions</h2>
+        <div className="text-center mt-5">
+          <h2>There was an error loading the transactions :(</h2>
         </div>
       )}
     </div>

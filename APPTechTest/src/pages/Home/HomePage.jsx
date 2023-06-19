@@ -9,6 +9,7 @@ export const HomePage = () => {
   const [exchangeRates, setExchangeRates] = useState([]);
   const [filteredExchangeRates, setFilteredExchangeRates] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -31,6 +32,7 @@ export const HomePage = () => {
         setExchangeRates(exchangeRateList);
         setFilteredExchangeRates(exchangeRateList);
       } catch (error) {
+        setError(error);
         // console.log("Error fetching exchange rates:", error);
       } finally {
         setLoading(false);
@@ -48,6 +50,13 @@ export const HomePage = () => {
     setFilteredExchangeRates(filtered);
   };
 
+  if (error) {
+    return (
+      <div className="home-page mt-5 fs-1">
+        <div>Error fetching exchange rates :( </div>
+      </div>
+    );
+  }
   return (
     <div className="home-page mt-3">
       <div className="row m-0">

@@ -12,8 +12,6 @@ namespace DB
         public DbSet<User> Users { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Rol> Rols { get; set; }
-        public DbSet<ExchangeRate> ExchangeRates { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().ToTable("User");
@@ -25,11 +23,6 @@ namespace DB
             modelBuilder.Entity<Transaction>()
                 .Property(e => e.Amount)
                 .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<ExchangeRate>().ToTable("ExchangeRate");
-            modelBuilder.Entity<ExchangeRate>()
-                .Property(e => e.Rate)
-                .HasColumnType("decimal(18,2)");
-
             // Add a new role
             modelBuilder.Entity<Rol>().HasData(
                 new Rol
